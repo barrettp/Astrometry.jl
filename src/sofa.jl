@@ -1,21 +1,21 @@
 """
     Drift second parameters
 """
-struct Driftsecond
-    year::Integer
-    month::Integer
-    mjd::Real
-    offset::Real
-    rate::Real
+struct Driftsecond{T<:Integer, U<:Real}
+    year::T
+    month::T
+    mjd::U
+    offset::U
+    rate::U
 end
 
 """
     Leap second parameters
 """
-struct Leapsecond
-    year::Integer
-    month::Integer
-    second::Real
+struct Leapsecond{T<:Integer, U<:Real}
+    year::T
+    month::T
+    second::U
 end
 
 """
@@ -63,7 +63,7 @@ const TINY = 1e-6
 
 # Reference dates and drift rates (sec/day), pre leap seconds.
 const DRIFTSECOND =
-    [Driftsecond(1960,  1, 37300.0, 1.4178180, 0.0012960),
+    (Driftsecond(1960,  1, 37300.0, 1.4178180, 0.0012960),
      Driftsecond(1961,  1, 37300.0, 1.4228180, 0.0012960),
      Driftsecond(1961,  8, 37300.0, 1.3728180, 0.0012960),
      Driftsecond(1962,  1, 37665.0, 1.8458580, 0.0011232),
@@ -76,11 +76,11 @@ const DRIFTSECOND =
      Driftsecond(1965,  7, 38761.0, 3.7401300, 0.0012960),
      Driftsecond(1965,  9, 38761.0, 3.8401300, 0.0012960),
      Driftsecond(1966,  1, 39126.0, 4.3131700, 0.0025920),
-     Driftsecond(1968,  2, 39126.0, 4.2131700, 0.0025920)]
+     Driftsecond(1968,  2, 39126.0, 4.2131700, 0.0025920))
 
 # Dates and Δ(AT)s.
 const LEAPSECOND =
-    [Leapsecond(1972,  1, 10.0),
+    (Leapsecond(1972,  1, 10.0),
      Leapsecond(1972,  7, 11.0),
      Leapsecond(1973,  1, 12.0),
      Leapsecond(1974,  1, 13.0),
@@ -107,7 +107,7 @@ const LEAPSECOND =
      Leapsecond(2009,  1, 34.0),
      Leapsecond(2012,  7, 35.0),
      Leapsecond(2015,  7, 36.0),
-     Leapsecond(2017,  1, 37.0)]
+     Leapsecond(2017,  1, 37.0))
 
 include("constants.jl")
 include("util.jl")
