@@ -10,7 +10,7 @@ StaticUnivariatePolynomials = "6f584044-cad5-5b68-a429-1e244a824f76"
 
 [compat]
 StaticArrays = "1.9"
-StaticUnivariatePolynomials = "<1.0"
+StaticUnivariatePolynomials = "0.6"
 julia = "1.7"
 
 [extras]
