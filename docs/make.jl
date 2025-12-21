@@ -1,14 +1,17 @@
 using Documenter, Astrometry
+using Documenter.Remotes: GitHub
 
 makedocs(;
     modules = [Astrometry],
     sitename = "Astrometry.jl",
     authors = "Paul Barrett",
+    repo = GitHub("JuliaAstro/Astrometry.jl"),
     format = Documenter.HTML(;
         assets = ["assets/custom.css"],
         sidebar_sitename = false,
         collapselevel = 1,
         warn_outdated = true,
+        canonical = "https://juliaastro.org/Astrometry/stable/",
     ),
     warnonly = [:missing_docs],
     pages = [
@@ -36,7 +39,8 @@ makedocs(;
 )
 
 deploydocs(;
-  repo = "github.com/barrettp/Astrometry.jl/docs",
+  repo = "github.com/JuliaAstro/Astrometry.jl",
   devbranch = "main",
-  push_preview=true
+  push_preview = true,
+  versions = ["stable" => "v^", "v#.#"], # Restrict to minor releases
 )
