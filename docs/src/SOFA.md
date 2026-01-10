@@ -10,7 +10,7 @@ propagation of the algorithms.
 In addition to that, it has the potential to provide higher performance compared
 to the C library, particularly when doing calculations of a large number (of
 order millions) of objects. Having to do a C call on every object incurs a huge
-overhead and is a signifficant performance hit.
+overhead and is a significant performance hit.
 
 ```@docs
 SOFA.Astrom
